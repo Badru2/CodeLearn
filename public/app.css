@@ -1,0 +1,62 @@
+body {
+    min-height: 100vh;
+    display: flex;
+}
+
+.login {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    margin: auto;
+    padding: 100px 100px;
+}
+
+.btn-primary-color {
+    background-color: #0c356a;
+    color: white;
+}
+.btn-primary-color:hover {
+    background-color: #0c356a;
+    color: white;
+}
+
+.half-circle-left {
+    height: 200px;
+    width: 100px;
+    border-bottom-left-radius: 100px;
+    border-top-left-radius: 100px;
+    position: absolute;
+    right: 0;
+    top: 25vh;
+}
+
+.double-circle {
+    width: 130px;
+    height: 120px;
+    box-sizing: border-box;
+    position: absolute;
+    left: 12vh;
+    top: 10vh;
+}
+
+.double-circle .circle1 {
+    width: 70px;
+    height: 70px;
+    background-color: #0c356a;
+    border-radius: 50%;
+    z-index: 1;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+}
+
+.double-circle .circle2 {
+    width: 100px;
+    height: 100px;
+    border: 3px solid #0c356a;
+    border-radius: 50%;
+    z-index: 2;
+    margin-left: 10px;
+    margin-top: 10px;
+    position: absolute;
+}
