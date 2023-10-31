@@ -75,7 +75,7 @@ class LaravelController extends Controller
     {
         //validate form
         $this->validate($request, [
-            'image'     => 'image|mimes:jpeg,jpg,png|max:2048',
+            'image'     => 'image|mimes:jpeg,jpg,png|max:20048',
             'title'     => 'required|min:5',
             'deskripsi'   => 'required|min:10',
             'content'   => 'required|min:10'

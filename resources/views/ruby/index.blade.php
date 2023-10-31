@@ -28,86 +28,20 @@
     <!-- Page Wrapper -->
     <div id="wrapper">
 
-        <!-- Sidebar -->
-        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
-
-            <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
-
-                <div class="sidebar-brand-text mx-3">Code Logic <sup>2</sup></div>
-            </a>
-
-            <!-- Divider -->
-            <hr class="sidebar-divider my-0">
-
-            <!-- Nav Item - Dashboard -->
-            <li class="nav-item active">
-                <a class="nav-link" href="/halamanAdmin">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Dashboard</span></a>
-            </li>
-
-            <!-- Divider -->
-            <hr class="sidebar-divider">
-
-            <!-- Heading -->
-            <div class="sidebar-heading">
-                Interface
-            </div>
-
-            <!-- Nav Item - Pages Collapse Menu -->
-            <li class="nav-item">
-                <a class="nav-link" href="{{ route('posts.index') }}">
-                    <i class="fas fa-fw fa-chart-area"></i>
-                    <span>Halaman Posts</span></a>
-            </li>
-
-            <!-- Heading -->
-
-            <!-- Nav Item - Laravel -->
-            <li class="nav-item">
-                <a class="nav-link" href="{{ route('laravel.index') }}">
-                    <i class="fas fa-fw fa-chart-area"></i>
-                    <span>Halaman Laravel</span></a>
-            </li>
-            <!-- Nav Item - Java Script -->
-            <li class="nav-item">
-                <a class="nav-link" href="{{ route('javascript.index') }}">
-                    <i class="fas fa-fw fa-chart-area"></i>
-                    <span>Halaman Java Script</span></a>
-            </li>
-            <!-- Nav Item - java -->
-            <li class="nav-item">
-                <a class="nav-link" href="{{ route('java.index') }}">
-                    <i class="fas fa-fw fa-chart-area"></i>
-                    <span>Halaman Java</span></a>
-            </li>
-            <!-- Nav Item - Ruby -->
-            <li class="nav-item">
-                <a class="nav-link" href="{{ route('ruby.index') }}">
-                    <i class="fas fa-fw fa-chart-area"></i>
-                    <span>Halaman Ruby</span></a>
-            </li>
-        </ul>
-        <!-- End of Sidebar -->
+        @include('components.sidebar')
 
         <!-- Content Wrapper -->
         <div id="content-wrapper" class="d-flex flex-column">
 
             <!-- Main Content -->
             <div id="content">
-
                 <!-- Topbar -->
                 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
-
                     <!-- Sidebar Toggle (Topbar) -->
                     <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
                         <i class="fa fa-bars"></i>
                     </button>
-
-
                     <ul class="navbar-nav ml-auto">
-
                         <!-- Nav Item - Search Dropdown (Visible Only XS) -->
                         <li class="nav-item dropdown no-arrow d-sm-none">
                             <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button"
@@ -132,7 +66,6 @@
                             </div>
                         </li>
                     </ul>
-
                 </nav>
                 <!-- End of Topbar -->
 
@@ -160,24 +93,22 @@
                                                 class="btn btn-md btn-success mb-3">TAMBAH POST</a>
                                             <table class="table table-bordered">
                                                 <thead>
-                                                    <tr>
-                                                        <th scope="col">GAMBAR</th>
-                                                        <th scope="col">JUDUL</th>
-                                                        <th scope="col">DESKRIPSI</th>
-                                                        <th scope="col">CONTENT</th>
-                                                        <th scope="col">AKSI</th>
-                                                    </tr>
+                                                    <th scope="col">GAMBAR</th>
+                                                    <th scope="col">JUDUL</th>
+                                                    <th scope="col">DESKRIPSI</th>
+                                                    <th scope="col">CONTENT</th>
+                                                    <th scope="col">AKSI</th>
                                                 </thead>
                                                 <tbody>
                                                     @forelse ($rubys as $data)
                                                         <tr>
                                                             <td class="text-center">
                                                                 <img src="{{ asset('/storage/ruby/' . $data->image) }}"
-                                                                    class="rounded" style="width: 150px">
+                                                                    class="rounded" alt="" style="width: 150px">
                                                             </td>
                                                             <td>{{ $data->title }}</td>
                                                             <td>{{ $data->deskripsi }}</td>
-                                                            <td>{!! $data->content !!}</td>
+                                                            <td>{!! Str::limit($data->content, 50) !!}</td>
                                                             <td class="text-center">
                                                                 <form onsubmit="return confirm('Apakah Anda Yakin ?');"
                                                                     action="{{ route('ruby.destroy', $data->id) }}"
@@ -209,7 +140,7 @@
 
 
 
-                        <!-- <script>
+                        {{-- <script>
                             //message with toastr
                             @if (session()->has('success'))
 
@@ -218,7 +149,7 @@
 
                                 toastr.error('{{ session('error') }}', 'GAGAL!');
                             @endif
-                        </script> -->
+                        </script>  --}}
 
                     </div>
                     <!-- End of Content Wrapper -->
