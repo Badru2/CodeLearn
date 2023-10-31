@@ -5,6 +5,11 @@ use App\Http\Controllers\HalamanjavaController;
 use App\Http\Controllers\HalamanjavascriptController;
 use App\Http\Controllers\HalamanlaravelController;
 use App\Http\Controllers\HalamanrubyController;
+use App\Http\Controllers\JavaController;
+use App\Http\Controllers\JavascriptController;
+use App\Http\Controllers\LaravelController;
+use App\Http\Controllers\PostController;
+use App\Http\Controllers\RubyController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\HomeController;
@@ -28,7 +33,7 @@ Route::post('/logout', [LoginController::class, 'logout']);
 Route::get('/register', [LoginController::class, 'register'])->name('register')->middleware('guest');
 Route::post('/registeradmin', [LoginController::class, 'registeradmin'])->name('registeradmin');
 //route resource crud data untuk posts
-Route::resource('/posts', \App\Http\Controllers\PostController::class);
+Route::resource('/posts', PostController::class);
 //route untuk ke halaman utama
 Route::get('/', [HomeController::class, 'index'])->name('user.index');
 Route::get('/RecentPosts/{id}', [DetailController::class, 'posts'])->name('user.recentPosts');
@@ -37,13 +42,13 @@ Route::get('/halamanAdmin', function () {
     return view('navAdmin');
 })->middleware('auth');
 //Route resource crud data untuk laravel
-Route::resource('/laravel', \App\Http\Controllers\LaravelController::class);
+Route::resource('/laravel', LaravelController::class);
 //Route resource crud data untuk Java
-Route::resource('/java', \App\Http\Controllers\JavaController::class);
+Route::resource('/java', JavaController::class);
 //Route resource crud data untuk JavaScript
-Route::resource('/javascript', \App\Http\Controllers\JavascriptController::class);
+Route::resource('/javascript', JavascriptController::class);
 //Route resource crud data untuk Ruby
-Route::resource('/ruby', \App\Http\Controllers\RubyController::class);
+Route::resource('/ruby', RubyController::class);
 //route untuk halaman laravel pada user
 Route::get('/halamanLaravel', [HalamanlaravelController::class, 'index'])->name('user.halamanLaravel');
 Route::get('/detailLaravel/{id}', [DetailController::class, 'laravel'])->name('user.detailLaravel');

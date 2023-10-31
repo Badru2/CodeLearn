@@ -12,13 +12,14 @@
     <title>CRUD JAVA</title>
 
     <!-- Custom fonts for this template-->
-    <link href="{{asset('template/template/vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('template/template/vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet"
+        type="text/css">
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
 
     <!-- Custom styles for this template-->
-    <link href="{{asset('template/template/css/sb-admin-2.min.css')}}" rel="stylesheet">
+    <link href="{{ asset('template/template/css/sb-admin-2.min.css') }}" rel="stylesheet">
 
 </head>
 
@@ -30,63 +31,63 @@
         <!-- Sidebar -->
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
-        <!-- Sidebar - Brand -->
-        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
-            
-            <div class="sidebar-brand-text mx-3">Code Logic <sup>2</sup></div>
-        </a>
+            <!-- Sidebar - Brand -->
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
 
-        <!-- Divider -->
-        <hr class="sidebar-divider my-0">
+                <div class="sidebar-brand-text mx-3">Code Logic <sup>2</sup></div>
+            </a>
 
-        <!-- Nav Item - Dashboard -->
-        <li class="nav-item active">
-            <a class="nav-link" href="/halamanAdmin">
-                <i class="fas fa-fw fa-tachometer-alt"></i>
-                <span>Dashboard</span></a>
-        </li>
+            <!-- Divider -->
+            <hr class="sidebar-divider my-0">
 
-        <!-- Divider -->
-        <hr class="sidebar-divider">
+            <!-- Nav Item - Dashboard -->
+            <li class="nav-item active">
+                <a class="nav-link" href="/halamanAdmin">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Dashboard</span></a>
+            </li>
 
-        <!-- Heading -->
-        <div class="sidebar-heading">
-            Interface
-        </div>
+            <!-- Divider -->
+            <hr class="sidebar-divider">
 
-        <!-- Nav Item - Pages Collapse Menu -->
-        <li class="nav-item">
-            <a class="nav-link" href="{{route('posts.index')}}">
-                <i class="fas fa-fw fa-chart-area"></i>
-                <span>Halaman Posts</span></a>
-        </li>
+            <!-- Heading -->
+            <div class="sidebar-heading">
+                Interface
+            </div>
 
-        <!-- Heading -->
-            
-        <!-- Nav Item - Laravel -->
-        <li class="nav-item">
-            <a class="nav-link" href="{{route('laravel.index')}}">
-                <i class="fas fa-fw fa-chart-area"></i>
-                <span>Halaman Laravel</span></a>
-        </li>
-        <!-- Nav Item - Java Script -->
-        <li class="nav-item">
-            <a class="nav-link" href="{{route('javascript.index')}}">
-                <i class="fas fa-fw fa-chart-area"></i>
-                <span>Halaman Java Script</span></a>
-        </li>
-        <!-- Nav Item - java -->
-        <li class="nav-item">
-            <a class="nav-link" href="{{route('java.index')}}">
-                <i class="fas fa-fw fa-chart-area"></i>
-                <span>Halaman Java</span></a>
-        </li>     
-        <!-- Nav Item - Ruby -->
-        <li class="nav-item">
-            <a class="nav-link" href="{{route('ruby.index')}}">
-                <i class="fas fa-fw fa-chart-area"></i>
-                <span>Halaman Ruby</span></a>
-        </li>                            
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('posts.index') }}">
+                    <i class="fas fa-fw fa-chart-area"></i>
+                    <span>Halaman Posts</span></a>
+            </li>
+
+            <!-- Heading -->
+
+            <!-- Nav Item - Laravel -->
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('laravel.index') }}">
+                    <i class="fas fa-fw fa-chart-area"></i>
+                    <span>Halaman Laravel</span></a>
+            </li>
+            <!-- Nav Item - Java Script -->
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('javascript.index') }}">
+                    <i class="fas fa-fw fa-chart-area"></i>
+                    <span>Halaman Java Script</span></a>
+            </li>
+            <!-- Nav Item - java -->
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('java.index') }}">
+                    <i class="fas fa-fw fa-chart-area"></i>
+                    <span>Halaman Java</span></a>
+            </li>
+            <!-- Nav Item - Ruby -->
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('ruby.index') }}">
+                    <i class="fas fa-fw fa-chart-area"></i>
+                    <span>Halaman Ruby</span></a>
+            </li>
         </ul>
         <!-- End of Sidebar -->
 
@@ -104,7 +105,7 @@
                         <i class="fa fa-bars"></i>
                     </button>
 
-                   
+
                     <ul class="navbar-nav ml-auto">
 
                         <!-- Nav Item - Search Dropdown (Visible Only XS) -->
@@ -129,7 +130,7 @@
                                     </div>
                                 </form>
                             </div>
-                        </li>                     
+                        </li>
                     </ul>
 
                 </nav>
@@ -141,113 +142,116 @@
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
                         <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
-                        
+
                     </div>
 
                     <!-- Content Row -->
-                    <div class="row">                
-
-                <div class="container mt-5">
                     <div class="row">
-                        <div class="col-md-12">
-                            <div>
-                                <h3 class="text-center my-4">CRUD RECENT JAVA</h3>       
-                                <hr>
-                            </div>
-                            <div class="card border-0 shadow-sm rounded">
-                                <div class="card-body">
-                                    <a href="{{ route('java.create') }}" class="btn btn-md btn-success mb-3">TAMBAH POST</a>
-                                    <table class="table table-bordered">
-                                        <thead>
-                                        <tr>
-                                            <th scope="col">GAMBAR</th>
-                                            <th scope="col">JUDUL</th>
-                                            <th scope="col">DESKRIPSI</th>
-                                            <th scope="col">TANGGAL</th>
-                                            <th scope="col">CONTENT</th>
-                                            <th scope="col">AKSI</th>
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-                                        @forelse ($javas as $data)
-                                            <tr>
-                                                <td class="text-center">
-                                                    <img src="{{ asset('/storage/java/'.$data->image) }}" class="rounded" style="width: 150px">
-                                                </td>
-                                                <td>{{ $data->title }}</td>
-                                                <td>{{  $data->deskripsi  }}</td>
-                                                <td>{{  $data->tanggal  }}</td>
-                                                <td>{!! $data->content !!}</td>
-                                                <td class="text-center">
-                                                    <form onsubmit="return confirm('Apakah Anda Yakin ?');" action="{{ route('java.destroy', $data->id) }}" method="POST">
-                                                        <a href="{{ route('java.show', $data->id) }}" class="btn btn-sm btn-dark">SHOW</a>
-                                                        <a href="{{ route('java.edit', $data->id) }}" class="btn btn-sm btn-primary">EDIT</a>
-                                                        @csrf
-                                                        @method('DELETE')
-                                                        <button type="submit" class="btn btn-sm btn-danger">HAPUS</button>
-                                                    </form>
-                                                </td>
-                                            </tr>
-                                        @empty
-                                            <div class="alert alert-danger">
-                                                Data Post belum Tersedia.
-                                            </div>
-                                        @endforelse
-                                        </tbody>
-                                    </table>  
-                                    {{ $javas->links() }}
+
+                        <div class="container mt-5">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div>
+                                        <h3 class="text-center my-4">CRUD RECENT JAVA</h3>
+                                        <hr>
+                                    </div>
+                                    <div class="card border-0 shadow-sm rounded">
+                                        <div class="card-body">
+                                            <a href="{{ route('java.create') }}"
+                                                class="btn btn-md btn-success mb-3">TAMBAH POST</a>
+                                            <table class="table table-bordered">
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">GAMBAR</th>
+                                                        <th scope="col">JUDUL</th>
+                                                        <th scope="col">DESKRIPSI</th>
+                                                        <th scope="col">CONTENT</th>
+                                                        <th scope="col">AKSI</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    @forelse ($javas as $data)
+                                                        <tr>
+                                                            <td class="text-center">
+                                                                <img src="{{ asset('/storage/java/' . $data->image) }}"
+                                                                    class="rounded" style="width: 150px">
+                                                            </td>
+                                                            <td>{{ $data->title }}</td>
+                                                            <td>{{ $data->deskripsi }}</td>
+                                                            <td>{!! $data->content !!}</td>
+                                                            <td class="text-center">
+                                                                <form onsubmit="return confirm('Apakah Anda Yakin ?');"
+                                                                    action="{{ route('java.destroy', $data->id) }}"
+                                                                    method="POST">
+                                                                    <a href="{{ route('java.show', $data->id) }}"
+                                                                        class="btn btn-sm btn-dark">SHOW</a>
+                                                                    <a href="{{ route('java.edit', $data->id) }}"
+                                                                        class="btn btn-sm btn-primary">EDIT</a>
+                                                                    @csrf
+                                                                    @method('DELETE')
+                                                                    <button type="submit"
+                                                                        class="btn btn-sm btn-danger">HAPUS</button>
+                                                                </form>
+                                                            </td>
+                                                        </tr>
+                                                    @empty
+                                                        <div class="alert alert-danger">
+                                                            Data Post belum Tersedia.
+                                                        </div>
+                                                    @endforelse
+                                                </tbody>
+                                            </table>
+                                            {{ $javas->links() }}
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
+
+
+
+                        <!-- <script>
+                            //message with toastr
+                            @if (session()->has('success'))
+
+                                toastr.success('{{ session('success') }}', 'BERHASIL!');
+                            @elseif (session()->has('error'))
+
+                                toastr.error('{{ session('error') }}', 'GAGAL!');
+                            @endif
+                        </script> -->
+
                     </div>
+                    <!-- End of Content Wrapper -->
+
                 </div>
-    
+                <!-- End of Page Wrapper -->
+
+                <!-- Scroll to Top Button-->
+                <a class="scroll-to-top rounded" href="#page-top">
+                    <i class="fas fa-angle-up"></i>
+                </a>
 
 
-    <!-- <script>
-        //message with toastr
-        @if(session()->has('success'))
-        
-            toastr.success('{{ session('success') }}', 'BERHASIL!'); 
+                <!-- Bootstrap core JavaScript-->
+                <script src="{{ asset('template/template/vendor/jquery/jquery.min.js') }}"></script>
+                <script src="{{ asset('template/template/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 
-        @elseif(session()->has('error'))
+                <!-- Core plugin JavaScript-->
+                <script src="{{ asset('template/template/vendor/jquery-easing/jquery.easing.min.js') }}"></script>
 
-            toastr.error('{{ session('error') }}', 'GAGAL!'); 
-            
-        @endif
-    </script> -->
+                <!-- Custom scripts for all pages-->
+                <script src="{{ asset('template/template/js/sb-admin-2.min.js') }}"></script>
 
-        </div>
-        <!-- End of Content Wrapper -->
+                <!-- Page level plugins -->
+                <script src="{{ asset('template/template/vendor/chart.js/Chart.min.js') }}"></script>
 
-    </div>
-    <!-- End of Page Wrapper -->
-
-    <!-- Scroll to Top Button-->
-    <a class="scroll-to-top rounded" href="#page-top">
-        <i class="fas fa-angle-up"></i>
-    </a>
-   
-
-    <!-- Bootstrap core JavaScript-->
-    <script src="{{asset('template/template/vendor/jquery/jquery.min.js')}}"></script>
-    <script src="{{asset('template/template/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
-
-    <!-- Core plugin JavaScript-->
-    <script src="{{asset('template/template/vendor/jquery-easing/jquery.easing.min.js')}}"></script>
-
-    <!-- Custom scripts for all pages-->
-    <script src="{{asset('template/template/js/sb-admin-2.min.js')}}"></script>
-
-    <!-- Page level plugins -->
-    <script src="{{asset('template/template/vendor/chart.js/Chart.min.js')}}"></script>
-
-    <!-- Page level custom scripts -->
-    <script src="{{asset('template/template/js/demo/chart-area-demo.js')}}"></script>
-    <script src="{{asset('template/template/js/demo/chart-pie-demo.js')}}"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+                <!-- Page level custom scripts -->
+                <script src="{{ asset('template/template/js/demo/chart-area-demo.js') }}"></script>
+                <script src="{{ asset('template/template/js/demo/chart-pie-demo.js') }}"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+                <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+                <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
 </body>
 

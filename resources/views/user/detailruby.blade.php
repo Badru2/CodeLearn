@@ -63,7 +63,6 @@
                             </div>
                             <div class="col-md-6">
                                 <h4>{{ $rubys->deskripsi }}</h4>
-                                <p>{{ $rubys->tanggal }}</p>
                             </div>
                             <div class="col-md-6 mt-5">
                                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel nesciunt id earum at

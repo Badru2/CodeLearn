@@ -11,39 +11,40 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ asset('app.css') }}">
     <!--Stylesheet-->
-    <style media="screen">
-
-    </style>
 </head>
 
 <body>
     <div class="background">
-        <div class="shape"></div>
-        <div class="shape"></div>
+        <img style="position: absolute; bottom: 0; left: 0;" src="{{ asset('images/circle.svg') }}" alt="">
+        <div class="half-circle-left btn-primary-color"></div>
+        <div class="double-circle">
+            <div class="circle1"></div>
+            <div class="circle2"></div>
+        </div>
     </div>
-    <div class="container">
-        <div class="row mt-5">
+    <div class="container w-50 d-flex">
+        <div class="login container border border-dark shadow card my-auto">
+
+            <img class="mb-2 mx-auto" width="200px" src="{{ asset('images/logo.svg') }}" alt="">
+
             <form action="/registeradmin" method="post">
                 @csrf
-                <h3>Login Here</h3>
+                <label class="form-check-label fw-bold mb-2" for="username">Username</label>
+                <input class="form-control border border-dark mb-5" type="text" placeholder="Username" name="name"
+                    id="username">
 
-                <label for="username">Username</label>
-                <input type="text" placeholder="Username" name="name" id="username">
+                <label class="form-check-label fw-bold mb-2" for="email">Email</label>
+                <input class="form-control border border-dark mb-5" type="text" placeholder="Email or Phone"
+                    name="email" id="username">
 
-                <label for="email">Email</label>
-                <input type="text" placeholder="Email or Phone" name="email" id="username">
+                <label class="form-check-label fw-bold mb-2" for="password">Password</label>
+                <input class="form-control border border-dark mb-5" type="password" placeholder="Password"
+                    name="password" id="password">
 
-                <label for="password">Password</label>
-                <input type="password" placeholder="Password" name="password" id="password">
-
-
-                <button>Log In</button>
-                <a href="/login">Login</a>
-                <!-- <div class="social">
-          <div class="go"><i class="fab fa-google"></i>  Google</div>
-          <div class="fb"><i class="fab fa-facebook"></i>  Facebook</div>
-        </div> -->
+                <button class="btn btn-primary-color w-100 mb-4">Sign In</button>
+                {{-- <a href="/login">Login</a> --}}
             </form>
 
         </div>

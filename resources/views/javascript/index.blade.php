@@ -31,63 +31,63 @@
         <!-- Sidebar -->
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
-        <!-- Sidebar - Brand -->
-        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
-        
-            <div class="sidebar-brand-text mx-3">Code Logic <sup>2</sup></div>
-        </a>
+            <!-- Sidebar - Brand -->
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
 
-        <!-- Divider -->
-        <hr class="sidebar-divider my-0">
+                <div class="sidebar-brand-text mx-3">Code Logic <sup>2</sup></div>
+            </a>
 
-        <!-- Nav Item - Dashboard -->
-        <li class="nav-item active">
-            <a class="nav-link" href="/halamanAdmin">
-                <i class="fas fa-fw fa-tachometer-alt"></i>
-                <span>Dashboard</span></a>
-        </li>
+            <!-- Divider -->
+            <hr class="sidebar-divider my-0">
 
-        <!-- Divider -->
-        <hr class="sidebar-divider">
+            <!-- Nav Item - Dashboard -->
+            <li class="nav-item active">
+                <a class="nav-link" href="/halamanAdmin">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Dashboard</span></a>
+            </li>
 
-        <!-- Heading -->
-        <div class="sidebar-heading">
-            Interface
-        </div>
+            <!-- Divider -->
+            <hr class="sidebar-divider">
 
-        <!-- Nav Item - Pages Collapse Menu -->
-        <li class="nav-item">
-            <a class="nav-link" href="{{route('posts.index')}}">
-                <i class="fas fa-fw fa-chart-area"></i>
-                <span>Halaman Posts</span></a>
-        </li>
+            <!-- Heading -->
+            <div class="sidebar-heading">
+                Interface
+            </div>
 
-        <!-- Heading -->
-            
-        <!-- Nav Item - Laravel -->
-        <li class="nav-item">
-            <a class="nav-link" href="{{route('laravel.index')}}">
-                <i class="fas fa-fw fa-chart-area"></i>
-                <span>Halaman Laravel</span></a>
-        </li>
-        <!-- Nav Item - Java Script -->
-        <li class="nav-item">
-            <a class="nav-link" href="{{route('javascript.index')}}">
-                <i class="fas fa-fw fa-chart-area"></i>
-                <span>Halaman Java Script</span></a>
-        </li>
-        <!-- Nav Item - java -->
-        <li class="nav-item">
-            <a class="nav-link" href="{{route('java.index')}}">
-                <i class="fas fa-fw fa-chart-area"></i>
-                <span>Halaman Java</span></a>
-        </li>     
-        <!-- Nav Item - Ruby -->
-        <li class="nav-item">
-            <a class="nav-link" href="{{route('ruby.index')}}">
-                <i class="fas fa-fw fa-chart-area"></i>
-                <span>Halaman Ruby</span></a>
-        </li>                            
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('posts.index') }}">
+                    <i class="fas fa-fw fa-chart-area"></i>
+                    <span>Halaman Posts</span></a>
+            </li>
+
+            <!-- Heading -->
+
+            <!-- Nav Item - Laravel -->
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('laravel.index') }}">
+                    <i class="fas fa-fw fa-chart-area"></i>
+                    <span>Halaman Laravel</span></a>
+            </li>
+            <!-- Nav Item - Java Script -->
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('javascript.index') }}">
+                    <i class="fas fa-fw fa-chart-area"></i>
+                    <span>Halaman Java Script</span></a>
+            </li>
+            <!-- Nav Item - java -->
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('java.index') }}">
+                    <i class="fas fa-fw fa-chart-area"></i>
+                    <span>Halaman Java</span></a>
+            </li>
+            <!-- Nav Item - Ruby -->
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('ruby.index') }}">
+                    <i class="fas fa-fw fa-chart-area"></i>
+                    <span>Halaman Ruby</span></a>
+            </li>
         </ul>
         <!-- End of Sidebar -->
 
@@ -105,7 +105,7 @@
                         <i class="fa fa-bars"></i>
                     </button>
 
-                  
+
                     <ul class="navbar-nav ml-auto">
 
                         <!-- Nav Item - Search Dropdown (Visible Only XS) -->
@@ -164,7 +164,6 @@
                                                         <th scope="col">GAMBAR</th>
                                                         <th scope="col">JUDUL</th>
                                                         <th scope="col">DESKRIPSI</th>
-                                                        <th scope="col">TANGGAL</th>
                                                         <th scope="col">CONTENT</th>
                                                         <th scope="col">AKSI</th>
                                                     </tr>
@@ -178,7 +177,6 @@
                                                             </td>
                                                             <td>{{ $data->title }}</td>
                                                             <td>{{ $data->deskripsi }}</td>
-                                                            <td>{{ $data->tanggal }}</td>
                                                             <td>{!! $data->content !!}</td>
                                                             <td class="text-center">
                                                                 <form onsubmit="return confirm('Apakah Anda Yakin ?');"

@@ -50,29 +50,16 @@
     <!-- content detail postingan -->
     <div class="container">
         <div class="row">
-            <div class="col-md-12">
-                <div class="card">
-                    <div class="card-header">
-                        <h2>install laravel</h2>
-                    </div>
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <img src="{{ asset('/storage/laravel/' . $laravels->image) }}" style="width: 500px;"
-                                    class="rounded mx-auto d-block " alt="" srcset="">
-                            </div>
-                            <div class="col-md-6">
-                                <h4>{{ $laravels->deskripsi }}</h4>
-                                <p>{{ $laravels->tanggal }}</p>
-                            </div>
-                            <div class="col-md-6 mt-5">
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel nesciunt id earum at
-                                    quos quae rem, doloribus tenetur laudantium, aut eveniet numquam natus quo eum
-                                    debitis aspernatur. Animi, consectetur maiores?</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="col-md-6">
+                <img src="{{ asset('/storage/laravel/' . $laravels->image) }}" style="width: 500px;"
+                    class="mx-auto d-block " alt="" srcset="">
+            </div>
+            <div class="col-md-6 my-auto">
+                <h4>{{ $laravels->title }}</h4>
+                <p>{{ $laravels->created_at->locale('id')->diffForHumans() }}</p>
+            </div>
+            <div class="col-md-6 mt-5 mx-5">
+                {!! $laravels->content !!}
             </div>
         </div>
     </div>
@@ -100,7 +87,6 @@
                         &copy; 2023 <strong>Copyright</strong> Website Ecommarce
                     </div>
                 </div>
-
             </div>
         </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"

@@ -58,12 +58,12 @@
                     <div class="card-body">
                         <div class="row">
                             <div class="col-md-6">
-                                <img src="{{ asset('/storage/javascript/' . $javascripts->image) }}" style="width: 500px;"
-                                    class="rounded mx-auto d-block " alt="" srcset="">
+                                <img src="{{ asset('/storage/javascript/' . $javascripts->image) }}"
+                                    style="width: 500px;" class="rounded mx-auto d-block " alt=""
+                                    srcset="">
                             </div>
                             <div class="col-md-6">
                                 <h4>{{ $javascripts->deskripsi }}</h4>
-                                <p>{{ $javascripts->tanggal }}</p>
                             </div>
                             <div class="col-md-6 mt-5">
                                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel nesciunt id earum at
