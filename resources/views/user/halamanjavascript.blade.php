@@ -7,6 +7,7 @@
     <title>Halaman Utama</title>
     <link rel="stylesheet" href="style.css">
     <!-- icon bootstrap -->
+    <link rel="stylesheet" href="{{ asset('app.css') }}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
@@ -25,20 +26,21 @@
                 <hr />
             </div>
             @foreach ($javascripts as $data)
-                <div class="col-md-3 mt-5">
+                <div class="col-md-4 mt-5">
                     <div class="card">
                         <a href="{{ route('user.detailjavascript', $data->id) }}"><img
                                 src="{{ asset('/storage/javascript/' . $data->image) }}" alt=""
-                                class="d-block w-100"></a>
+                                class="d-block w-100 image-cover-post"></a>
                         <div class="card-body">
-                            <h5 class="card-title">{{ $data->title }}</h5>
+                            <a href="{{ route('user.detailjavascript', $data->id) }}"
+                                class="card-title link-underline link-underline-opacity-0 fs-5 fw-semibold">{{ $data->title }}</a>
                             <p class="card-title">{{ $data->deskripsi }}</p>
                         </div>
                     </div>
                 </div>
             @endforeach
         </div>
-
+        {{ $javascripts->links() }}
     </div>
     @include('components.footer')
     <!-- end recent post -->

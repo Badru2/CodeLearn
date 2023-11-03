@@ -9,9 +9,9 @@ use Illuminate\Http\Request;
 class HalamanrubyController extends Controller
 {
     //
-    public function index():View
+    public function index(): View
     {
-        $rubys = Ruby::all();
-        return view('user.halamanruby',compact('rubys'));
+        $rubys = Ruby::paginate(9);
+        return view('user.halamanruby', compact('rubys'));
     }
 }

@@ -9,10 +9,9 @@ use Illuminate\Http\Request;
 class HalamanjavaController extends Controller
 {
     //
-    public function index():View
+    public function index(): View
     {
-        $javas = Java::all();
-        return view('user.halamanjava',compact('javas'));
-
+        $javas = Java::paginate(9);
+        return view('user.halamanjava', compact('javas'));
     }
 }

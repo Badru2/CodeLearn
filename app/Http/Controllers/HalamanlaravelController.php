@@ -9,9 +9,9 @@ use Illuminate\Http\Request;
 class HalamanlaravelController extends Controller
 {
     //
-    public function index():View
+    public function index(): View
     {
         $laravels = Laravel::paginate(9);
-        return view('user.halamanLaravel',compact('laravels'));
+        return view('user.halamanLaravel', compact('laravels'));
     }
 }

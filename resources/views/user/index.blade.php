@@ -7,6 +7,7 @@
     <title>Halaman Utama</title>
     <link rel="stylesheet" href="style.css">
     <!-- icon bootstrap -->
+    <link rel="stylesheet" href="{{ asset('app.css') }}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
@@ -42,10 +43,11 @@
                 <div class="col-md-3 mt-5">
                     <div class="card">
                         <a href="{{ route('user.detailLaravel', $data->id) }}"><img
-                                src="{{ asset('/storage/laravel/' . $data->image) }}" class="d-block w-100"
-                                alt=""></a>
+                                src="{{ asset('/storage/laravel/' . $data->image) }}"
+                                class="d-block w-100 image-cover-post-home" alt=""></a>
                         <div class="card-body">
-                            <h5 class="card-title">{{ $data->title }}</h5>
+                            <a href="{{ route('user.detailLaravel', $data->id) }}"
+                                class="card-title link-underline link-underline-opacity-0 fs-5 fw-semibold ">{{ $data->title }}</a>
                             <p class="card-title">{{ $data->deskripsi }}</p>
                         </div>
                     </div>
@@ -60,10 +62,11 @@
                 <div class="col-md-3 mt-5">
                     <div class="card">
                         <a href="{{ route('user.detailjavascript', $data->id) }}"><img
-                                src="{{ asset('/storage/javascript/' . $data->image) }}" class="d-block w-100"
-                                alt=""></a>
+                                src="{{ asset('/storage/javascript/' . $data->image) }}"
+                                class="d-block w-100 image-cover-post-home" alt=""></a>
                         <div class="card-body">
-                            <h5 class="card-title">{{ $data->title }}</h5>
+                            <a href="{{ route('user.detailjavascript', $data->id) }}"
+                                class="card-title link-underline link-underline-opacity-0 fs-5 fw-semibold">{{ $data->title }}</a>
                             <p class="card-title">{{ $data->deskripsi }}</p>
                         </div>
                     </div>
@@ -80,10 +83,11 @@
                 <div class="col-md-3 mt-5">
                     <div class="card">
                         <a href="{{ route('user.detailjava', $data->id) }}"><img
-                                src="{{ asset('/storage/java/' . $data->image) }}" class="d-block w-100"
-                                alt=""></a>
+                                src="{{ asset('/storage/java/' . $data->image) }}"
+                                class="d-block w-100 image-cover-post-home" alt=""></a>
                         <div class="card-body">
-                            <h5 class="card-title">{{ $data->title }}</h5>
+                            <a href="{{ route('user.detailjava', $data->id) }}"
+                                class="card-title link-underline link-underline-opacity-0 fs-5 fw-semibold">{{ $data->title }}</a>
                             <p class="card-title">{{ $data->deskripsi }}</p>
                         </div>
                     </div>
@@ -99,10 +103,11 @@
                 <div class="col-md-3 mt-5">
                     <div class="card">
                         <a href="{{ route('user.detailruby', $data->id) }}"><img
-                                src="{{ asset('/storage/ruby/' . $data->image) }}" class="d-block w-100"
-                                alt=""></a>
+                                src="{{ asset('/storage/ruby/' . $data->image) }}"
+                                class="d-block w-100 image-cover-post-home" alt=""></a>
                         <div class="card-body">
-                            <h5 class="card-title">{{ $data->title }}</h5>
+                            <a href="{{ route('user.detailruby', $data->id) }}"
+                                class="card-title link-underline link-underline-opacity-0 fs-5 fw-semibold">{{ $data->title }}</a>
                             <p class="card-title">{{ $data->deskripsi }}</p>
                         </div>
                     </div>

@@ -24,14 +24,11 @@
             <div class="circle2"></div>
         </div>
     </div>
-    <div class="container w-50 d-flex">
-        <div class="login container border border-dark shadow card my-auto ">
-
+    <div class="container w-50 d-flex ">
+        <div class="login container border border-dark shadow card my-auto m-auto">
             <img class="mb-2 mx-auto" width="200px" src="{{ asset('images/logo.svg') }}" alt="">
-
             <form action="/loginproses" method="post">
                 @csrf
-
                 <label class="form-check-label fw-bold mb-2" for="email">Email</label>
                 <input class="form-control border border-dark mb-5" type="text" placeholder="" name="email"
                     id="username">

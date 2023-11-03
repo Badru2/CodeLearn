@@ -8,16 +8,17 @@ use App\Models\Ruby;
 use App\Models\Java;
 use Illuminate\Http\Request;
 use App\Models\Post;
+
 class HomeController extends Controller
 {
     //
     public function index()
     {
-       
-        $laravels= Laravel::latest()->paginate(6);
-        $javascripts= Javascript::latest()->paginate(6);  
-        $javas= Java::latest()->paginate(6);  
-        $rubys= Ruby::latest()->paginate(6);  
-        return view('user.index',compact('javas','rubys','laravels','javascripts'));
+
+        $laravels = Laravel::latest()->paginate(4);
+        $javascripts = Javascript::latest()->paginate(4);
+        $javas = Java::latest()->paginate(4);
+        $rubys = Ruby::latest()->paginate(4);
+        return view('user.index', compact('javas', 'rubys', 'laravels', 'javascripts'));
     }
 }
