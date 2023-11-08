@@ -34,7 +34,7 @@
                 <h5>Home Page</h5>
                 <hr />
             </div>
-            <div class="judul-laravel">
+            <div class="judul-laravel mt-3 ">
                 <a href="{{ route('user.halamanLaravel') }}"style="text-decoration: none;">
                     <h5>Laravel</h5>
                 </a>
@@ -48,7 +48,7 @@
                         <div class="card-body">
                             <a href="{{ route('user.detailLaravel', $data->id) }}"
                                 class="card-title link-underline link-underline-opacity-0 fs-5 fw-semibold ">{{ $data->title }}</a>
-                            <p class="card-title">{{ $data->deskripsi }}</p>
+                            <p class="card-title">{!! $data->deskripsi !!}</p>
                         </div>
                     </div>
                 </div>
@@ -67,7 +67,7 @@
                         <div class="card-body">
                             <a href="{{ route('user.detailjavascript', $data->id) }}"
                                 class="card-title link-underline link-underline-opacity-0 fs-5 fw-semibold">{{ $data->title }}</a>
-                            <p class="card-title">{{ $data->deskripsi }}</p>
+                            <p class="card-title">{!! $data->deskripsi !!}</p>
                         </div>
                     </div>
                 </div>
@@ -88,7 +88,7 @@
                         <div class="card-body">
                             <a href="{{ route('user.detailjava', $data->id) }}"
                                 class="card-title link-underline link-underline-opacity-0 fs-5 fw-semibold">{{ $data->title }}</a>
-                            <p class="card-title">{{ $data->deskripsi }}</p>
+                            <p class="card-title">{!! $data->deskripsi !!}</p>
                         </div>
                     </div>
                 </div>
@@ -108,7 +108,7 @@
                         <div class="card-body">
                             <a href="{{ route('user.detailruby', $data->id) }}"
                                 class="card-title link-underline link-underline-opacity-0 fs-5 fw-semibold">{{ $data->title }}</a>
-                            <p class="card-title">{{ $data->deskripsi }}</p>
+                            <p class="card-title">{!! $data->deskripsi !!}</p>
                         </div>
                     </div>
                 </div>

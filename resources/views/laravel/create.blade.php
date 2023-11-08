@@ -34,8 +34,8 @@
                             </div>
                             <div class="form-group">
                                 <label class="font-weight-bold">Deskripsi</label>
-                                <textarea class="form-control @error('deskripsi') is-invalid @enderror" name="deskripsi" rows="5"
-                                    placeholder="Masukkan Deskripsi Post">{{ old('deskripsi') }}</textarea>
+                                <input type="text" class="form-control @error('deskripsi') is-invalid @enderror"
+                                    name="deskripsi" placeholder="Masukkan Deskripsi Post">{{ old('deskripsi') }}
                                 <!-- error message untuk content -->
                                 @error('deskripsi')
                                     <div class="alert alert-danger mt-2">

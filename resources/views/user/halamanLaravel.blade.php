@@ -34,13 +34,17 @@
                         <div class="card-body">
                             <a href="{{ route('user.detailLaravel', $data->id) }}"
                                 class="card-title link-underline link-underline-opacity-0 fs-5 fw-semibold">{{ $data->title }}</a>
-                            <p class="card-title">{{ $data->deskripsi }}</p>
+                            <p class="card-title">{!! $data->deskripsi !!}</p>
                         </div>
                     </div>
                 </div>
             @endforeach
         </div>
-        {{ $laravels->links() }}
+        <div class="d-flex">
+            <div class="mx-auto mt-5">
+                {{ $laravels->links() }}
+            </div>
+        </div>
     </div>
     @include('components.footer')
     <!-- end recent post -->

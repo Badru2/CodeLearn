@@ -40,7 +40,11 @@
                 </div>
             @endforeach
         </div>
-        {{ $javas->links() }}
+        <div class="d-flex">
+            <div class="mx-auto mt-5">
+                {{ $javas->links() }}
+            </div>
+        </div>
     </div>
 
     @include('components.footer')

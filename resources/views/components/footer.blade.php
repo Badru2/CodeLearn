@@ -1,18 +1,18 @@
 <div class="footer bg-dark text-white p-5 mt-5">
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-md-5">
-                <div class="row col-4">
-                    <a href="#" class="col-3 text-white">
+            <div class="col-md-6">
+                <div class="row col-6">
+                    <a href="#" class="col-2 text-white">
                         <i class="bi bi-facebook fs-5"></i>
                     </a>
-                    <a href="#" class="col-3 text-white">
+                    <a href="#" class="col-2 text-white">
                         <i class="bi bi-instagram fs-5"></i>
                     </a>
-                    <a href="#" class="col-3 text-white">
+                    <a href="#" class="col-2 text-white">
                         <i class="bi bi-youtube fs-5"></i>
                     </a>
-                    <a href="#" class="col-3 text-white">
+                    <a href="#" class="col-2 text-white">
                         <i class="bi bi-twitter fs-5"></i>
                     </a>
                 </div>
