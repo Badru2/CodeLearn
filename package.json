@@ -10,6 +10,7 @@
         "vite": "^4.0.0"
     },
     "dependencies": {
+        "@ckeditor/ckeditor5-alignment": "^40.0.0",
         "@ckeditor/ckeditor5-code-block": "^40.0.0"
     }
 }

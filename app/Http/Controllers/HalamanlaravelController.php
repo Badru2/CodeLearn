@@ -11,7 +11,7 @@ class HalamanlaravelController extends Controller
     //
     public function index(): View
     {
-        $laravels = Laravel::paginate(9);
+        $laravels = Laravel::latest()->paginate(9);
         return view('user.halamanLaravel', compact('laravels'));
     }
 }

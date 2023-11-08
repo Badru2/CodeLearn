@@ -11,7 +11,7 @@ class HalamanjavascriptController extends Controller
     //
     public function index():View
     {
-    $javascripts = Javascript::paginate(9);
+    $javascripts = Javascript::latest()->paginate(9);
     return view('user.halamanjavascript',compact('javascripts'));
     }
 }

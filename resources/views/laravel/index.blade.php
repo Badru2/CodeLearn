@@ -69,7 +69,7 @@
                                                             <td>{{ $data->title }}</td>
                                                             <td>{{ $data->deskripsi }}</td>
                                                             <td>{!! Str::limit($data->content, 50) !!}</td>
-                                                            <td class="text-center">
+                                                            <td class="text-center col-2">
                                                                 <form onsubmit="return confirm('Apakah Anda Yakin ?');"
                                                                     action="{{ route('laravel.destroy', $data->id) }}"
                                                                     method="POST">

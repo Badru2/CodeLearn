@@ -11,7 +11,7 @@ class HalamanrubyController extends Controller
     //
     public function index(): View
     {
-        $rubys = Ruby::paginate(9);
+        $rubys = Ruby::latest()->paginate(9);
         return view('user.halamanruby', compact('rubys'));
     }
 }

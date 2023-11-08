@@ -11,7 +11,7 @@ class HalamanjavaController extends Controller
     //
     public function index(): View
     {
-        $javas = Java::paginate(9);
+        $javas = Java::latest()->paginate(9);
         return view('user.halamanjava', compact('javas'));
     }
 }
