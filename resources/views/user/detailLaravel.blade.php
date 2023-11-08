@@ -15,6 +15,7 @@
             background-color: black;
             color: white;
             padding: 30px;
+            border-radius: 5px;
         }
     </style>
 </head>
@@ -24,9 +25,9 @@
     @include('components.navigation')
     <!-- end navbar -->
     <!-- content detail postingan -->
-    <div class="container">
+    <div class="container mt-5">
         <div class="row">
-            <div class="col-md-6 mt-3 image-detail">
+            <div class="col-md-6 image-detail">
                 <img src="{{ asset('/storage/laravel/' . $laravels->image) }}" class="mx-auto d-flex" alt=""
                     srcset="">
             </div>

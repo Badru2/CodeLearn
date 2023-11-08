@@ -4,11 +4,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detail Laravel</title>
+    <title>{{ $rubys->title }}</title>
     <!-- icon bootstrap -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        pre {
+            background-color: black;
+            color: white;
+            padding: 30px;
+            border-radius: 5px;
+        }
+    </style>
 </head>
 
 <body>
@@ -16,22 +24,18 @@
     @include('components.navigation')
     <!-- end navbar -->
     <!-- content detail postingan -->
-    <div class="container">
+    <div class="container mt-5">
         <div class="row">
-            <div class="card-body">
-                <div class="row">
-                    <div class="col-md-6">
-                        <img src="{{ asset('/storage/ruby/' . $rubys->image) }}" style="width: 500px;"
-                            class="rounded mx-auto d-block " alt="" srcset="">
-                    </div>
-                    <div class="col-md-6">
-                        <h4>{{ $rubys->title }}</h4>
-                        <p>{{ $rubys->created_at->locale('id')->diffForHumans() }}</p>
-                    </div>
-                    <div class="col-md-6 mt-5">
-                        {!! $rubys->content !!}
-                    </div>
-                </div>
+            <div class="col-md-6 image-detail">
+                <img src="{{ asset('/storage/ruby/' . $rubys->image) }}" class="rounded mx-auto d-block " alt=""
+                    srcset="">
+            </div>
+            <div class="col-md-6">
+                <h4>{{ $rubys->title }}</h4>
+                <p>{{ $rubys->created_at->locale('id')->diffForHumans() }}</p>
+            </div>
+            <div class="col mt-5 mx-auto">
+                {!! $rubys->content !!}
             </div>
         </div>
     </div>
