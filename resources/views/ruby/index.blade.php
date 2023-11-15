@@ -9,17 +9,17 @@
     <meta name="author" content="">
     <title>CRUD RUBY</title>
     <!-- Custom fonts for this template-->
-    <link href="{{ asset('template/template/vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet"
-        type="text/css">
-    <link
-        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-        rel="stylesheet">
+    <link href="{{ asset('template/template/vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
     <!-- Custom styles for this template-->
     <link href="{{ asset('template/template/css/sb-admin-2.min.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 </head>
 
 <body id="page-top">
+
+    @include('sweetalert::alert')
+
     <!-- Page Wrapper -->
     <div id="wrapper">
         @include('components.sidebar')
@@ -43,8 +43,7 @@
                                     </div>
                                     <div class="card border-0 shadow-sm rounded">
                                         <div class="card-body">
-                                            <a href="{{ route('ruby.create') }}"
-                                                class="btn btn-md btn-success mb-3">TAMBAH POST</a>
+                                            <a href="{{ route('ruby.create') }}" class="btn btn-md btn-success mb-3">TAMBAH POST</a>
                                             <table class="table table-bordered">
                                                 <thead>
                                                     <th scope="col">GAMBAR</th>
@@ -55,33 +54,28 @@
                                                 </thead>
                                                 <tbody>
                                                     @forelse ($rubys as $data)
-                                                        <tr>
-                                                            <td class="text-center">
-                                                                <img src="{{ asset('/storage/ruby/' . $data->image) }}"
-                                                                    class="rounded" alt="" style="width: 150px">
-                                                            </td>
-                                                            <td>{{ $data->title }}</td>
-                                                            <td>{{ $data->deskripsi }}</td>
-                                                            <td>{!! Str::limit($data->content, 50) !!}</td>
-                                                            <td class="text-center">
-                                                                <form onsubmit="return confirm('Apakah Anda Yakin ?');"
-                                                                    action="{{ route('ruby.destroy', $data->id) }}"
-                                                                    method="POST">
-                                                                    <a href="{{ route('laravel.show', $data->id) }}"
-                                                                        class="btn btn-sm btn-dark">SHOW</a>
-                                                                    <a href="{{ route('ruby.edit', $data->id) }}"
-                                                                        class="btn btn-sm btn-primary">EDIT</a>
-                                                                    @csrf
-                                                                    @method('DELETE')
-                                                                    <button type="submit"
-                                                                        class="btn btn-sm btn-danger">HAPUS</button>
-                                                                </form>
-                                                            </td>
-                                                        </tr>
+                                                    <tr>
+                                                        <td class="text-center">
+                                                            <img src="{{ asset('/storage/ruby/' . $data->image) }}" class="rounded" alt="" style="width: 150px">
+                                                        </td>
+                                                        <td>{{ $data->title }}</td>
+                                                        <td>{{ $data->deskripsi }}</td>
+                                                        <td>{!! Str::limit($data->content, 50) !!}</td>
+                                                        <td class="text-center">
+                                                            <form onsubmit="return confirm('Apakah Anda Yakin ?');" action="{{ route('ruby.destroy', $data->id) }}" method="POST">
+                                                                <a href="{{ route('laravel.show', $data->id) }}" class="btn btn-sm btn-dark">SHOW</a>
+                                                                <a href="{{ route('ruby.edit', $data->id) }}" class="btn btn-sm btn-primary">EDIT</a>
+                                                                <!-- @csrf
+                                                                @method('DELETE')
+                                                                <button type="submit" class="btn btn-sm btn-danger">HAPUS</button> -->
+                                                                <a href="{{ route('ruby.destroy', $data->id) }}" class="btn btn-danger" data-confirm-delete="true">Delete</a>
+                                                            </form>
+                                                        </td>
+                                                    </tr>
                                                     @empty
-                                                        <div class="alert alert-danger">
-                                                            Data Post belum Tersedia.
-                                                        </div>
+                                                    <div class="alert alert-danger">
+                                                        Data Post belum Tersedia.
+                                                    </div>
                                                     @endforelse
                                                 </tbody>
                                             </table>
@@ -120,8 +114,7 @@
     <!-- Page level custom scripts -->
     <script src="{{ asset('template/template/js/demo/chart-area-demo.js') }}"></script>
     <script src="{{ asset('template/template/js/demo/chart-pie-demo.js') }}"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

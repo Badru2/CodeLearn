@@ -41,14 +41,21 @@ Route::get('/RecentPosts/{id}', [DetailController::class, 'posts'])->name('user.
 Route::get('/halamanAdmin', function () {
     return view('navAdmin');
 })->middleware('auth');
+// route untuk search pada user
+Route::get('/search', [HomeController::class, 'cari'])->name('user.index');
 //Route resource crud data untuk laravel
 Route::resource('/laravel', LaravelController::class);
+Route::delete('deletelaravel/{id}/destroy', [App\Http\Controllers\LaravelController::class, 'destroy'])->name('laravel.destroy');
+// Route::delete('/deletelaravel/{id}', [LaravelController::class, 'destroy'])->name('laravel.destroy');
 //Route resource crud data untuk Java
 Route::resource('/java', JavaController::class);
+Route::delete('deletejava/{id}/destroy', [App\Http\Controllers\JavaController::class, 'destroy'])->name('java.destroy');
 //Route resource crud data untuk JavaScript
 Route::resource('/javascript', JavascriptController::class);
+Route::delete('deletejavascript/{id}/destroy', [App\Http\Controllers\JavascriptController::class, 'destroy'])->name('javascript.destroy');
 //Route resource crud data untuk Ruby
 Route::resource('/ruby', RubyController::class);
+Route::delete('rubyjavascript/{id}/destroy', [App\Http\Controllers\RubyController::class, 'destroy'])->name('ruby.destroy');
 //route untuk halaman laravel pada user
 Route::get('/halamanLaravel', [HalamanlaravelController::class, 'index'])->name('user.halamanLaravel');
 Route::get('/detailLaravel/{id}', [DetailController::class, 'laravel'])->name('user.detailLaravel');
@@ -61,3 +68,4 @@ Route::get('/detailJava/{id}', [DetailController::class, 'java'])->name('user.de
 //route untuk halaman ruby untuk user
 Route::get('/halamanRuby', [HalamanrubyController::class, 'index'])->name('user.halamanruby');
 Route::get('/detailruby/{id}', [DetailController::class, 'ruby'])->name('user.detailruby');
+// Route::delete('/deletelaravel', [LaravelController::class, 'delete'])->name('laravel.delete');

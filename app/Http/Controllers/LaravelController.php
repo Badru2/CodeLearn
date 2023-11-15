@@ -15,6 +15,9 @@ class LaravelController extends Controller
     {
         //get posts
         $laravels = Laravel::latest()->paginate(5);
+        $title = 'Delete Data!';
+        $text = "Are you sure you want to delete?";
+        confirmDelete($title, $text);
 
         //render view with posts
         return view('laravel.index', compact('laravels'));
@@ -113,6 +116,14 @@ class LaravelController extends Controller
 
         //redirect to index
         return redirect()->route('laravel.index')->with(['success' => 'Data Berhasil Diubah!']);
+    }
+    public function show(string $id): View
+    {
+        //get post by ID
+        $laravels = Laravel::findOrFail($id);
+
+        //render view with post
+        return view('laravel.show', compact('laravels'));
     }
     public function destroy($id): RedirectResponse
     {

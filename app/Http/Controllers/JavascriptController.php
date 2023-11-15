@@ -15,6 +15,9 @@ class JavascriptController extends Controller
     {
         //get posts
         $javascripts = Javascript::latest()->paginate(5);
+        $title = 'Delete Data!';
+        $text = "Are you sure you want to delete?";
+        confirmDelete($title, $text);
 
         //render view with posts
         return view('javascript.index', compact('javascripts'));

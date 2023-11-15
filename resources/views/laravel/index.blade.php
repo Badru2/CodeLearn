@@ -9,17 +9,14 @@
     <meta name="author" content="">
     <title>SB Admin 2 - Dashboard</title>
     <!-- Custom fonts for this template-->
-    <link href="{{ asset('template/template/vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet"
-        type="text/css">
-    <link
-        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-        rel="stylesheet">
+    <link href="{{ asset('template/template/vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
     <!-- Custom styles for this template-->
     <link href="{{ asset('template/template/css/sb-admin-2.min.css') }}" rel="stylesheet">
 </head>
 
 <body id="page-top">
-
+    @include('sweetalert::alert')
     <!-- Page Wrapper -->
     <div id="wrapper">
 
@@ -49,8 +46,7 @@
                                     </div>
                                     <div class="card border-0 shadow-sm rounded">
                                         <div class="card-body">
-                                            <a href="{{ route('laravel.create') }}"
-                                                class="btn btn-md btn-success mb-3">TAMBAH POST</a>
+                                            <a href="{{ route('laravel.create') }}" class="btn btn-md btn-success mb-3">TAMBAH POST</a>
                                             <table class="table table-bordered">
                                                 <thead>
                                                     <th scope="col">GAMBAR</th>
@@ -61,33 +57,30 @@
                                                 </thead>
                                                 <tbody>
                                                     @forelse ($laravels as $data)
-                                                        <tr>
-                                                            <td class="text-center">
-                                                                <img src="{{ asset('/storage/laravel/' . $data->image) }}"
-                                                                    alt="" class="rounded" style="width: 150px">
-                                                            </td>
-                                                            <td>{{ $data->title }}</td>
-                                                            <td>{{ $data->deskripsi }}</td>
-                                                            <td>{!! Str::limit($data->content, 50) !!}</td>
-                                                            <td class="text-center col-2">
-                                                                <form onsubmit="return confirm('Apakah Anda Yakin ?');"
-                                                                    action="{{ route('laravel.destroy', $data->id) }}"
-                                                                    method="POST">
-                                                                    <a href="{{ route('laravel.show', $data->id) }}"
-                                                                        class="btn btn-sm btn-dark">SHOW</a>
-                                                                    <a href="{{ route('laravel.edit', $data->id) }}"
-                                                                        class="btn btn-sm btn-primary">EDIT</a>
-                                                                    @csrf
-                                                                    @method('DELETE')
-                                                                    <button type="submit"
-                                                                        class="btn btn-sm btn-danger">HAPUS</button>
-                                                                </form>
-                                                            </td>
-                                                        </tr>
+                                                    <tr>
+                                                        <td class="text-center">
+                                                            <img src="{{ asset('/storage/laravel/' . $data->image) }}" alt="" class="rounded" style="width: 150px">
+                                                        </td>
+                                                        <td>{{ $data->title }}</td>
+                                                        <td>{{ $data->deskripsi }}</td>
+                                                        <td>{!! Str::limit($data->content, 50) !!}</td>
+                                                        <td class="text-center col-2">
+                                                            <form action="#" method="POST">
+                                                                <a href="{{ route('laravel.edit', $data->id) }}" class="btn btn-sm btn-primary">EDIT</a>
+                                                                <!-- @csrf
+                                                                @method('DELETE')
+                                                                 <button type="submit" class="btn btn-sm btn-danger delete" data-id="$data->id">HAPUS</button>  -->
+                                                                <a href="{{ route('laravel.destroy', $data->id) }}" class="btn btn-danger" data-confirm-delete="true">Delete</a>
+                                                            </form>
+                                                        <td>
+                                                        </td>
+                                                        </td>
+
+                                                    </tr>
                                                     @empty
-                                                        <div class="alert alert-danger">
-                                                            Data Post belum Tersedia.
-                                                        </div>
+                                                    <div class=" alert alert-danger">
+                                                        Data Post belum Tersedia.
+                                                    </div>
                                                     @endforelse
                                                 </tbody>
                                             </table>
@@ -102,14 +95,11 @@
 
                         <!-- <script>
                             //message with toastr
-                            @if (session()->has('success'))
+                            @if (session()->has(' success')) toastr.success('{{ session('success') }}', 'BERHASIL!' ); @elseif (session()->has('error'))
 
-                                toastr.success('{{ session('success') }}', 'BERHASIL!');
-                            @elseif (session()->has('error'))
-
-                                toastr.error('{{ session('error') }}', 'GAGAL!');
-                            @endif
-                        </script> -->
+                                                                    toastr.error('{{ session('error') }}', 'GAGAL!');
+                                                                    @endif
+                                                                    </script> -->
 
                     </div>
                     <!-- End of Content Wrapper -->
@@ -145,6 +135,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+
 
 </body>
 

@@ -9,16 +9,14 @@
     <meta name="author" content="">
     <title>CRUD JAVA</title>
     <!-- Custom fonts for this template-->
-    <link href="{{ asset('template/template/vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet"
-        type="text/css">
-    <link
-        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-        rel="stylesheet">
+    <link href="{{ asset('template/template/vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
     <!-- Custom styles for this template-->
     <link href="{{ asset('template/template/css/sb-admin-2.min.css') }}" rel="stylesheet">
 </head>
 
 <body id="page-top">
+    @include('sweetalert::alert')
 
     <!-- Page Wrapper -->
     <div id="wrapper">
@@ -50,8 +48,7 @@
                                     </div>
                                     <div class="card border-0 shadow-sm rounded">
                                         <div class="card-body">
-                                            <a href="{{ route('java.create') }}"
-                                                class="btn btn-md btn-success mb-3">TAMBAH POST</a>
+                                            <a href="{{ route('java.create') }}" class="btn btn-md btn-success mb-3">TAMBAH POST</a>
                                             <table class="table table-bordered">
                                                 <thead>
                                                     <tr>
@@ -64,33 +61,28 @@
                                                 </thead>
                                                 <tbody>
                                                     @forelse ($javas as $data)
-                                                        <tr>
-                                                            <td class="text-center">
-                                                                <img src="{{ asset('/storage/java/' . $data->image) }}"
-                                                                    class="rounded" style="width: 150px">
-                                                            </td>
-                                                            <td>{{ $data->title }}</td>
-                                                            <td>{{ $data->deskripsi }}</td>
-                                                            <td>{!! Str::limit($data->content, 50) !!}</td>
-                                                            <td class="text-center">
-                                                                <form onsubmit="return confirm('Apakah Anda Yakin ?');"
-                                                                    action="{{ route('java.destroy', $data->id) }}"
-                                                                    method="POST">
-                                                                    <a href="{{ route('java.show', $data->id) }}"
-                                                                        class="btn btn-sm btn-dark">SHOW</a>
-                                                                    <a href="{{ route('java.edit', $data->id) }}"
-                                                                        class="btn btn-sm btn-primary">EDIT</a>
-                                                                    @csrf
-                                                                    @method('DELETE')
-                                                                    <button type="submit"
-                                                                        class="btn btn-sm btn-danger">HAPUS</button>
-                                                                </form>
-                                                            </td>
-                                                        </tr>
+                                                    <tr>
+                                                        <td class="text-center">
+                                                            <img src="{{ asset('/storage/java/' . $data->image) }}" class="rounded" style="width: 150px">
+                                                        </td>
+                                                        <td>{{ $data->title }}</td>
+                                                        <td>{{ $data->deskripsi }}</td>
+                                                        <td>{!! Str::limit($data->content, 50) !!}</td>
+                                                        <td class="text-center">
+                                                            <form action="#" method="POST">
+                                                                <a href="{{ route('java.show', $data->id) }}" class="btn btn-sm btn-dark">SHOW</a>
+                                                                <a href="{{ route('java.edit', $data->id) }}" class="btn btn-sm btn-primary">EDIT</a>
+                                                                <!-- @csrf
+                                                                @method('DELETE')
+                                                                <button type="submit" class="btn btn-sm btn-danger">HAPUS</button> -->
+                                                                <a href="{{ route('java.destroy', $data->id) }}" class="btn btn-danger" data-confirm-delete="true">Delete</a>
+                                                            </form>
+                                                        </td>
+                                                    </tr>
                                                     @empty
-                                                        <div class="alert alert-danger">
-                                                            Data Post belum Tersedia.
-                                                        </div>
+                                                    <div class="alert alert-danger">
+                                                        Data Post belum Tersedia.
+                                                    </div>
                                                     @endforelse
                                                 </tbody>
                                             </table>
@@ -129,11 +121,15 @@
     <script src="{{ asset('template/template/vendor/chart.js/Chart.min.js') }}"></script>
 
     <!-- Page level custom scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="{{ asset('template/template/js/demo/chart-area-demo.js') }}"></script>
     <script src="{{ asset('template/template/js/demo/chart-pie-demo.js') }}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
 </body>
 
 </html>

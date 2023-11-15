@@ -15,6 +15,9 @@ class JavaController extends Controller
     {
         //get posts
         $javas = Java::latest()->paginate(5);
+        $title = 'Delete Data!';
+        $text = "Are you sure you want to delete?";
+        confirmDelete($title, $text);
 
         //render view with posts
         return view('java.index', compact('javas'));

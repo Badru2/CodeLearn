@@ -9,16 +9,14 @@
     <meta name="author" content="">
     <title>SB Admin 2 - Dashboard</title>
     <!-- Custom fonts for this template-->
-    <link href="{{ asset('template/template/vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet"
-        type="text/css">
-    <link
-        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-        rel="stylesheet">
+    <link href="{{ asset('template/template/vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
     <!-- Custom styles for this template-->
     <link href="{{ asset('template/template/css/sb-admin-2.min.css') }}" rel="stylesheet">
 </head>
 
 <body id="page-top">
+    @include('sweetalert::alert')
 
     <!-- Page Wrapper -->
     <div id="wrapper">
@@ -48,8 +46,7 @@
                                     </div>
                                     <div class="card border-0 shadow-sm rounded">
                                         <div class="card-body">
-                                            <a href="{{ route('javascript.create') }}"
-                                                class="btn btn-md btn-success mb-3">TAMBAH POST</a>
+                                            <a href="{{ route('javascript.create') }}" class="btn btn-md btn-success mb-3">TAMBAH POST</a>
                                             <table class="table table-bordered">
                                                 <thead>
                                                     <tr>
@@ -62,33 +59,29 @@
                                                 </thead>
                                                 <tbody>
                                                     @forelse ($javascripts as $data)
-                                                        <tr>
-                                                            <td class="text-center">
-                                                                <img src="{{ asset('/storage/javascript/' . $data->image) }}"
-                                                                    class="rounded" style="width: 150px">
-                                                            </td>
-                                                            <td>{{ $data->title }}</td>
-                                                            <td>{{ $data->deskripsi }}</td>
-                                                            <td>{!! Str::limit($data->content, 50) !!}</td>
-                                                            <td class="text-center">
-                                                                <form onsubmit="return confirm('Apakah Anda Yakin ?');"
-                                                                    action="{{ route('javascript.destroy', $data->id) }}"
-                                                                    method="POST">
-                                                                    <a href="{{ route('javascript.show', $data->id) }}"
-                                                                        class="btn btn-sm btn-dark">SHOW</a>
-                                                                    <a href="{{ route('javascript.edit', $data->id) }}"
-                                                                        class="btn btn-sm btn-primary">EDIT</a>
-                                                                    @csrf
+                                                    <tr>
+                                                        <td class="text-center">
+                                                            <img src="{{ asset('/storage/javascript/' . $data->image) }}" class="rounded" style="width: 150px">
+                                                        </td>
+                                                        <td>{{ $data->title }}</td>
+                                                        <td>{{ $data->deskripsi }}</td>
+                                                        <td>{!! Str::limit($data->content, 50) !!}</td>
+                                                        <td class="text-center">
+                                                            <form onsubmit="return confirm('Apakah Anda Yakin ?');" action="{{ route('javascript.destroy', $data->id) }}" method="POST">
+                                                                <a href="{{ route('javascript.show', $data->id) }}" class="btn btn-sm btn-dark">SHOW</a>
+                                                                <a href="{{ route('javascript.edit', $data->id) }}" class="btn btn-sm btn-primary">EDIT</a>
+                                                                <!-- @csrf
                                                                     @method('DELETE')
                                                                     <button type="submit"
-                                                                        class="btn btn-sm btn-danger">HAPUS</button>
-                                                                </form>
-                                                            </td>
-                                                        </tr>
+                                                                        class="btn btn-sm btn-danger">HAPUS</button> -->
+                                                                <a href="{{ route('javascript.destroy', $data->id) }}" class="btn btn-danger" data-confirm-delete="true">Delete</a>
+                                                            </form>
+                                                        </td>
+                                                    </tr>
                                                     @empty
-                                                        <div class="alert alert-danger">
-                                                            Data Post belum Tersedia.
-                                                        </div>
+                                                    <div class="alert alert-danger">
+                                                        Data Post belum Tersedia.
+                                                    </div>
                                                     @endforelse
                                                 </tbody>
                                             </table>
