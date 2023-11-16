@@ -26,7 +26,10 @@
     </div>
     <div class="container w-50 d-flex ">
         <div class="login container border border-dark shadow card my-auto m-auto">
-            <img class="mb-2 mx-auto" width="200px" src="{{ asset('images/logo.svg') }}" alt="">
+            {{-- <img class="mb-2 mx-auto" width="200px" src="{{ asset('images/logo.svg') }}" alt=""> --}}
+            <div class="d-flex w-50 mx-auto mb-3">
+                <h2>Code.<span class="text-warning text-center fw-bold">Learn</span></h2>
+            </div>
             <form action="/loginproses" method="post">
                 @csrf
                 <label class="form-check-label fw-bold mb-2" for="email">Email</label>

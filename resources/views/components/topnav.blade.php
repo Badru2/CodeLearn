@@ -2,7 +2,7 @@
     integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
 {{-- Navbar Start --}}
-<nav class="navbar navbar-expand navbar bg-white topbar mb-4 static-top shadow-lg">
+<nav class="navbar navbar-expand navbar bg-white topbar mb-4 static-top shadow-lg ">
     <!-- Sidebar Toggle (Topbar) -->
     <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
         <i class="fa fa-bars"></i>

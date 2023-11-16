@@ -12,8 +12,11 @@
     <title>Halaman Admin</title>
 
     <!-- Custom fonts for this template-->
-    <link href="{{ asset('template/template/vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <link href="{{ asset('template/template/vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet"
+        type="text/css">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
 
     <!-- Custom styles for this template-->
     <link href="{{ asset('template/template/css/sb-admin-2.min.css') }}" rel="stylesheet">
@@ -24,16 +27,16 @@
 <body id="page-top">
     <!-- data dari database -->
     @php
-    use App\Models\Post;
-    use App\Models\Laravel;
-    use App\Models\Java;
-    use App\Models\Ruby;
-    use App\Models\Javascript;
+        use App\Models\Post;
+        use App\Models\Laravel;
+        use App\Models\Java;
+        use App\Models\Ruby;
+        use App\Models\Javascript;
 
-    $data_laravel= Laravel::all()->count();
-    $data_java= Java::all()->count();
-    $data_ruby= Ruby::all()->count();
-    $data_javascript= Javascript::all()->count();
+        $data_laravel = Laravel::all()->count();
+        $data_java = Java::all()->count();
+        $data_ruby = Ruby::all()->count();
+        $data_javascript = Javascript::all()->count();
     @endphp
 
     <!-- end data -->
@@ -68,14 +71,15 @@
                         <div class="col-xl-3 col-md-6 mb-4">
                             <div class="card border-left-primary shadow h-100 py-2">
                                 <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
+                                    <div class="row align-items-center">
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
                                                 Laravel</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{$data_laravel}}</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $data_laravel }}
+                                            </div>
                                         </div>
-                                        <div class="col-auto">
-                                            <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                                        <div class="col-auto fs-1">
+                                            <iconify-icon icon="logos:laravel"></iconify-icon>
                                         </div>
                                     </div>
                                 </div>
@@ -87,14 +91,15 @@
                         <div class="col-xl-3 col-md-6 mb-4">
                             <div class="card border-left-success shadow h-100 py-2">
                                 <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
+                                    <div class="row align-items-center">
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                                                Java Script</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{$data_javascript}}</div>
+                                                JavaScript</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $data_javascript }}
+                                            </div>
                                         </div>
-                                        <div class="col-auto">
-                                            <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                                        <div class="col-auto fs-1">
+                                            <iconify-icon icon="logos:javascript"></iconify-icon>
                                         </div>
                                     </div>
                                 </div>
@@ -106,14 +111,15 @@
                         <div class="col-xl-3 col-md-6 mb-4">
                             <div class="card border-left-success shadow h-100 py-2">
                                 <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
+                                    <div class="row align-items-center">
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
                                                 Java</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{$data_java}}</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $data_java }}
+                                            </div>
                                         </div>
-                                        <div class="col-auto">
-                                            <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                                        <div class="col-auto fs-1">
+                                            <iconify-icon icon="devicon:java-wordmark"></iconify-icon>
                                         </div>
                                     </div>
                                 </div>
@@ -125,14 +131,15 @@
                         <div class="col-xl-3 col-md-6 mb-4">
                             <div class="card border-left-success shadow h-100 py-2">
                                 <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
+                                    <div class="row justify-content-between align-items-center">
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
                                                 Ruby</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{$data_ruby}}</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $data_ruby }}
+                                            </div>
                                         </div>
-                                        <div class="col-auto">
-                                            <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                                        <div class="col-auto fs-1">
+                                            <iconify-icon icon="skill-icons:ruby"></iconify-icon>
                                         </div>
                                     </div>
                                 </div>
@@ -154,6 +161,7 @@
                     <i class="fas fa-angle-up"></i>
                 </a>
 
+                <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
 
                 <!-- Bootstrap core JavaScript-->
                 {{-- <script src="{{ asset('template/template/vendor/jquery/jquery.min.js') }}"></script>

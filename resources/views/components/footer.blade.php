@@ -1,4 +1,4 @@
-<div class="footer bg-dark text-white p-5 mt-5">
+<div class="footer bg-dark text-white p-5 ">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-6">

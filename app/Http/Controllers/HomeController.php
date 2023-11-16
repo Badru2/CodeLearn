@@ -26,10 +26,10 @@ class HomeController extends Controller
         $keyword = $request->input('cari');
 
         // mengambil data dari table pegawai sesuai pencarian data
-        $laravels = Laravel::where('title', 'like', "%" . $keyword . "%")->paginate(10);
-        $javascripts = Javascript::where('title', 'like', "%" . $keyword . "%")->paginate(10);
-        $javas = Java::where('title', 'like', "%" . $keyword . "%")->paginate(10);
-        $rubys = Ruby::where('title', 'like', "%" . $keyword . "%")->paginate(10);
+        $laravels = Laravel::where('title', 'like', "%" . $keyword . "%")->paginate(4);
+        $javascripts = Javascript::where('title', 'like', "%" . $keyword . "%")->paginate(4);
+        $javas = Java::where('title', 'like', "%" . $keyword . "%")->paginate(4);
+        $rubys = Ruby::where('title', 'like', "%" . $keyword . "%")->paginate(4);
 
 
         // mengirim data pegawai ke view index

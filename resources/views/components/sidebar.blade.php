@@ -2,7 +2,7 @@
     <div class="position-fixed">
         <!-- Sidebar - Brand -->
         <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
-            <div class="sidebar-brand-text mx-3">Code Logic <sup>2</sup></div>
+            <div class="sidebar-brand-text mx-3">Code.<span class="text-warning">Learn</span></div>
         </a>
 
         <!-- Divider -->
@@ -42,7 +42,7 @@
         <li class="nav-item">
             <a class="nav-link" href="{{ route('javascript.index') }}">
                 <i class="fas fa-fw fa-chart-area"></i>
-                <span>Halaman Java Script</span></a>
+                <span>Halaman JavaScript</span></a>
         </li>
         <!-- Nav Item - java -->
         <li class="nav-item">

@@ -9,14 +9,14 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 
-<body style="background: lightgray">
-
+<body style="background: lightgray" style="max-width: 100vh">
     <div class="container mt-5 mb-5">
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card border-0 shadow-sm rounded">
                     <div class="card-body">
-                        <img src="{{ asset('storage/laravels/'.$laravels->image) }}" class="w-100 rounded">
+                        <img src="{{ asset('storage/laravels/' . $laravels->image) }}" alt=""
+                            class="w-100 rounded">
                         <hr>
                         <h4>{{ $laravels->title }}</h4>
                         <p class="tmt-3">

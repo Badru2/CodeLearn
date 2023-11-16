@@ -71,13 +71,29 @@
 }
 
 .image-detail {
-    width: 100rem;
+    width: 100%;
+}
 
+.image-detail img {
+    max-width: 100%;
+    min-width: 100%;
+    object-fit: cover;
 }
 
 @media screen and (max-width: 767px) {
-    .image-detail {
-        width: 100%;
+    .image-detail img {
+        max-width: 100%;
+        min-width: 20em;
         margin-bottom: 50px;
     }
+
+    .p-3 {
+        padding: 0;
+    }
+
+    /* .detail-content {
+        max-width: 100%;
+        padding: 0;
+        margin: 0;
+    } */
 }

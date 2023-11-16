@@ -25,20 +25,23 @@
     @include('components.navigation')
     <!-- end navbar -->
     <!-- content detail postingan -->
-    <div class="container mt-5">
+    <div class="detail col-md-8 mx-auto shadow p-3 mt-2">
         <div class="row">
-            <div class="col-md-6 image-detail">
+            <div class="image-detail">
                 <img src="{{ asset('/storage/java/' . $javas->image) }}" class="mx-auto d-flex" alt=""
                     srcset="">
             </div>
-            <div class="col-md-6 my-auto">
+            <div class="mt-5 ">
                 <h4>{{ $javas->title }}</h4>
                 <p>{{ $javas->created_at->locale('id')->diffForHumans() }}</p>
             </div>
-            <div class="col mt-5 mx-auto">
+            <div class="detail-content mt-5 mx-auto">
                 {!! $javas->content !!}
             </div>
         </div>
+    </div>
+    <div class="mt-3 shadow-lg w-100 p-5">
+        <div id="disqus_thread"></div>
     </div>
     <!-- footer -->
     @include('components.footer')
